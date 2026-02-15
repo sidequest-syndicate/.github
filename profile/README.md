@@ -12,9 +12,10 @@ Sidequest Syndicate is our space to learn new tech, experiment freely, and build
 
 ## Our Approach
 
-- **Curiosity-driven** - We follow what interests us
-- **Learn by building** - Side projects are the best classroom
-- **Small and scrappy** - No process for the sake of process
+- **Explore the map** - We follow curiosity, not the meta
+- **XP over credentials** - We level up by building, not by talking about it
+- **Side quests grant XP** - Every project is a chance to level up
+- **Small party, big crits** - No bloated raids, no endless buff rotations
 
 ---
 
