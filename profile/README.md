@@ -18,6 +18,6 @@ Sidequest Syndicate is our space to learn new tech, experiment freely, and build
 
 ---
 
-<sub>It's a secret to everybody.</sub>
+<sub>It's a secret to everybody. But if you were expecting to find something here, you already know who to ask.</sub>
 
 <sub>Based in the USA. Distributed by choice.</sub>
