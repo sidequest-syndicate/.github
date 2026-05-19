@@ -1,3 +1,4 @@
+---
 version: 1.4.6
 project_name: .github
 vcs:
@@ -22,7 +23,7 @@ languages:
   all: []
 tools:
   detected:
-  - Git
+    - Git
   testing_framework: Minimal - manual testing only
 inferred:
   project_type: Unknown
