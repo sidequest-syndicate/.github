@@ -22,6 +22,24 @@
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["major"],
       "automerge": false
+    },
+    {
+      "description": "Ignore @types/node major bumps org-wide. @types/node tracks the Node runtime types; every Sidequest repo pins the Node engine in package.json#engines, so a @types/node major (e.g. ^22 → ^25) types in APIs that aren't on the runtime. Revisit when a repo updates its engine pin.",
+      "matchPackageNames": ["@types/node"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "description": "Ignore TypeScript major bumps org-wide. TS majors have transitive type-package fallout (Pulumi types, AWS SDK types, framework types) and need a coordinated review, not a one-line Renovate PR. File a deliberate upgrade PR when ready.",
+      "matchPackageNames": ["typescript"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "description": "Ignore pnpm/action-setup major bumps. The action's major version is tied to a default pnpm version (v6 → pnpm 11), but every Sidequest repo pins pnpm via `packageManager` in package.json. Bumping the action major without regenerating pnpm-lock.yaml produces ERR_PNPM_BROKEN_LOCKFILE.",
+      "matchPackageNames": ["pnpm/action-setup"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
     }
   ]
 }
