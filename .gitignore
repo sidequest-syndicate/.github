@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# AIDA local overlay (machine-specific, gitignored by design)
+.claude/aida-project-context.local.yml
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+[Dd]esktop.ini
+
+# Linux
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# IDE
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+*~
