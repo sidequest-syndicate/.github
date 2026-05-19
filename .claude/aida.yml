@@ -1,0 +1,11 @@
+---
+# AIDA Project Configuration Marker
+# This file indicates AIDA is configured for this project
+version: "1.4.6"
+configured: "2026-05-19T01:15:39.437956+00:00"
+
+project:
+  name: ".github"
+
+plugins:
+  - aida-workflow-commands

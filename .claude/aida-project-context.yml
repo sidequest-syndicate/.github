@@ -1,0 +1,40 @@
+---
+version: 1.4.6
+project_name: .github
+vcs:
+  type: git
+  has_vcs: true
+  uses_worktrees: false
+  is_github: true
+  is_gitlab: false
+files:
+  has_readme: false
+  has_license: false
+  has_gitignore: false
+  has_dockerfile: false
+  has_docker_compose: false
+  has_changelog: false
+  has_contributing: false
+  has_tests: false
+  has_ci_cd: false
+  has_docs_directory: false
+languages:
+  primary: Unknown
+  all: []
+tools:
+  detected:
+    - Git
+  testing_framework: Minimal - manual testing only
+inferred:
+  project_type: Unknown
+  team_collaboration: Solo project - just me
+  documentation_level: Minimal
+  code_organization: Follow existing pattern
+preferences:
+  branching_model: GitHub Flow (feature branches → main)
+  issue_tracking: GitHub Issues
+  github_project_board: null
+  jira_config: null
+  confluence_spaces: null
+  project_conventions: ''
+  api_docs_approach: null

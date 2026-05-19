@@ -1,0 +1,16 @@
+---
+# Markdownlint Configuration
+
+# Allow long lines (prose paragraphs in profile README)
+MD013:
+  line_length: 300
+
+# Allow HTML elements we intentionally use
+MD033:
+  allowed_elements:
+    - "!--"
+    - sub
+
+# Allow duplicate headings in different sections
+MD024:
+  siblings_only: true
