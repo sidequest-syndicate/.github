@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Sidequest Syndicate org-wide Renovate preset. Auto-discovered by Mend as the named org preset (`<org>/.github:renovate-config`). Repos can also extend it explicitly via `github>sidequest-syndicate/.github:renovate-config`. CAR-619: ONE grouped dependency PR per repo, at most every two weeks, nothing automerged, no out-of-band PRs.",
+  "description": "Sidequest Syndicate org-wide Renovate preset. Auto-discovered by Mend as the named org preset (`<org>/.github:renovate-config`). Repos can also extend it explicitly via `github>sidequest-syndicate/.github:renovate-config`. CAR-619: ONE grouped dependency PR per repo, at most every two weeks, nothing automerged. Security advisories are the one exception: each opens its own PR as soon as the advisory lands, outside the group, never automerged.",
   "extends": [
     "config:recommended",
     "helpers:pinGitHubActionDigests",
@@ -15,8 +15,8 @@
   "prHourlyLimit": 2,
   "vulnerabilityAlerts": {
     "enabled": true,
-    "schedule": ["* * 1,15 * *"],
-    "groupName": "all dependencies (biweekly)",
+    "schedule": ["at any time"],
+    "groupName": null,
     "automerge": false,
     "labels": ["dependencies", "security"]
   },
