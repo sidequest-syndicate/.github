@@ -1,26 +1,41 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Sidequest Syndicate org-wide Renovate preset. Auto-discovered by Mend as the named org preset (`<org>/.github:renovate-config`). Repos can also extend it explicitly via `github>sidequest-syndicate/.github:renovate-config`.",
+  "description": "Sidequest Syndicate org-wide Renovate preset. Auto-discovered by Mend as the named org preset (`<org>/.github:renovate-config`). Repos can also extend it explicitly via `github>sidequest-syndicate/.github:renovate-config`. CAR-619: ONE grouped dependency PR per repo, at most every two weeks, nothing automerged, no out-of-band PRs.",
   "extends": [
     "config:recommended",
     "helpers:pinGitHubActionDigests",
     ":semanticCommits"
   ],
-  "platformAutomerge": true,
-  "schedule": ["before 6am on monday"],
-  "prConcurrentLimit": 5,
+  "timezone": "America/New_York",
+  "schedule": ["* * 1,15 * *"],
+  "dependencyDashboard": true,
+  "automerge": false,
+  "platformAutomerge": false,
+  "prConcurrentLimit": 1,
+  "prHourlyLimit": 2,
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "schedule": ["* * 1,15 * *"],
+    "groupName": "all dependencies (biweekly)",
+    "automerge": false,
+    "labels": ["dependencies", "security"]
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["* * 1,15 * *"],
+    "automerge": false
+  },
   "packageRules": [
     {
-      "description": "Group GitHub Actions minor/patch/digest into one weekly PR; auto-merge on green CI",
-      "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["minor", "patch", "digest"],
-      "groupName": "GitHub Actions",
-      "automerge": true
+      "description": "CAR-619: everything, majors included, lands in ONE group (one PR per repo). Repo rules may add labels and notes but must not set groupName, or the one PR splits apart again. The groupName is fixed: Renovate cannot put the month in a title.",
+      "matchPackageNames": ["*"],
+      "groupName": "all dependencies (biweekly)",
+      "automerge": false
     },
     {
-      "description": "GitHub Actions major bumps stay individual and require human review",
-      "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["major"],
+      "description": "CAR-619: lock-file maintenance rides in the same group on the same schedule.",
+      "matchUpdateTypes": ["lockFileMaintenance"],
+      "groupName": "all dependencies (biweekly)",
       "automerge": false
     },
     {
